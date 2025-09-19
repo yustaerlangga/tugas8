@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Menghitung Luas Bangun Datar</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 20px;
+            line-height: 1.6;
+        }
+        .result-box {
+            border: 1px solid #ccc;
+            padding: 15px;
+            margin-bottom: 20px;
+            border-radius: 5px;
+            background-color: #f9f9f9;
+        }
+        .result-box h3 {
+            margin-top: 0;
+            color: #333;
+        }
+    </style>
+</head>
+<body>
+
+    <h1>Menghitung Luas Bangun Datar</h1>
+
+    <div id="results"></div>
+
+    <script>
+        // Mendapatkan elemen div tempat hasil akan ditampilkan
+        const resultsDiv = document.getElementById('results');
+
+        // --- Fungsi untuk menambahkan hasil ke halaman web ---
+        const displayResult = (title, message) => {
+            const resultBox = document.createElement('div');
+            resultBox.className = 'result-box';
+            resultBox.innerHTML = `<h3>${title}</h3><p>${message}</p>`;
+            resultsDiv.appendChild(resultBox);
+        };
+
+        // --- Persegi Panjang ---
+        /** * Menghitung luas persegi panjang. * Rumus: panjang * lebar */
+        const hitungLuasPersegiPanjang = (panjang, lebar) => {
+            return panjang * lebar;
+        };
+        
+        const panjangPersegiPanjang = 10;
+        const lebarPersegiPanjang = 5;
+        const luasPersegiPanjang = hitungLuasPersegiPanjang(panjangPersegiPanjang, lebarPersegiPanjang);
+        displayResult(
+            "Hasil Luas Persegi Panjang",
+            `Panjang: ${panjangPersegiPanjang}, Lebar: ${lebarPersegiPanjang}, Luas: ${luasPersegiPanjang}`
+        );
+        
+        // --- Bujur Sangkar ---
+        /*** Menghitung luas bujur sangkar (persegi). * Rumus: sisi * sisi */
+        const hitungLuasBujurSangkar = (sisi) => {
+            return sisi * sisi;
+        };
+        
+        const sisiBujurSangkar = 8;
+        const luasBujurSangkar = hitungLuasBujurSangkar(sisiBujurSangkar);
+        displayResult(
+            "Hasil Luas Bujur Sangkar",
+            `Sisi: ${sisiBujurSangkar}, Luas: ${luasBujurSangkar}`
+        );
+        
+        // --- Segitiga ---
+        /***Menghitung luas segitiga.*Rumus: 0.5 * alas * tinggi*/
+        const hitungLuasSegitiga = (alas, tinggi) => {
+            return 0.5 * alas * tinggi;
+        };
+        
+        const alasSegitiga = 12;
+        const tinggiSegitiga = 7;
+        const luasSegitiga = hitungLuasSegitiga(alasSegitiga, tinggiSegitiga);
+        displayResult(
+            "Hasil Luas Segitiga",
+            `Alas: ${alasSegitiga}, Tinggi: ${tinggiSegitiga}, Luas: ${luasSegitiga}`
+        );
+    </script>
+
+</body>
+</html>
